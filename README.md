@@ -9,6 +9,9 @@ This assumes you have Python installed on your machine.
 3. run `pip install requirements.txt`
 4. run `python main.py`
 
+## Where can I find the results?
+`./data/courses.csv`
+
 ## What courses does it scrap?
 This can be specified in the `coursestoscrap.csv`.
 Create a new line and enter the coursecode(APSC160) of the course that you want to scrap
