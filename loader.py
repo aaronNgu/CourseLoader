@@ -22,7 +22,10 @@ def formData(row):
     return {'_id': courseCode, 'description': description,'overall_rating': '-', 'num_reviews': 0, 'year': year}
 
 def insertOne(data, model):
-    model.insert_one(data)
+    try: 
+        model.insert_one(data)
+    except: 
+        pass
 
 def readAndInsertCourses(model):
     with open('./data/courses.csv') as file:
