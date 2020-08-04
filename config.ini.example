@@ -8,3 +8,6 @@ DB_NAME=name
 DB_PW=something
 DB_USER=somthing
 DB_IDENTIFIER=something
+
+[COURSE]
+LIMIT=10

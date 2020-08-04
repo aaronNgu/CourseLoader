@@ -2,6 +2,11 @@ from bs4 import BeautifulSoup
 import requests
 import csv
 from loader import load
+import configparser
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+limit = config.get('COURSE', 'LIMIT')
 
 def loadCoursesToScrap():
     result = []
@@ -42,8 +47,10 @@ def getCourseCodeAndTitles(page):
     soup = BeautifulSoup(page.content, 'html.parser')
     listOfTr = soup.find_all('tr')
     result = []
+
+    n = min([int(limit) + 1, (len(listOfTr) - 1)])
     # skipping the first and the last
-    for x in range(1, (len(listOfTr) - 1)):
+    for x in range(1, n):
         try:
             courseCode = listOfTr[x].find_all('td')[0].find("a").text 
             title = listOfTr[x].find_all('td')[1].text
@@ -75,4 +82,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    load()
+    #load()
