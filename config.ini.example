@@ -9,5 +9,8 @@ DB_PW=something
 DB_USER=somthing
 DB_IDENTIFIER=something
 
+'''
+LIMIT specifies how many courses you would keep for each courseCode
+'''
 [COURSE]
 LIMIT=10
