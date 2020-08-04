@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
-import configparser
 import requests
 import csv
+from loader import load
 
 def loadCoursesToScrap():
     result = []
@@ -64,10 +64,6 @@ def writeToCSV(array, overwrite):
             writer.writerow([row[0], row[1]])
 
 def main():
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    # config.get('DATABASE', 'username'):w
-
     courses = loadCoursesToScrap()
     overwrite = 1
     for courseCode in courses:
@@ -79,3 +75,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    load()
