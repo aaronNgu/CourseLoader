@@ -1,0 +1,10 @@
+''' 
+create a config.ini file, copy paste the  fields below and fill in accordingly
+DB_IDENTIFIER can be found in the atlas connection URL
+mongodb+srv://<DB_NAME>:<DB_PW>@<DB_IDENTIFIER>.mongodb.net/<DB_NAME>?retryWrites=true&w=majority
+'''
+[DATABASE]
+DB_NAME=name
+DB_PW=something
+DB_USER=somthing
+DB_IDENTIFIER=something
